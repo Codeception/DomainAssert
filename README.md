@@ -130,7 +130,7 @@ public function assertIsGreaterThanMinimal()
 
 ## License
 
-Verify is open-sourced software licensed under the [MIT][4] License. © Codeception PHP Testing Framework
+Open-source software licensed under the [MIT][4] License. © Codeception PHP Testing Framework
 
 [1]: https://phpunit.de/
 [2]: http://codeception.com/
