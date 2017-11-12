@@ -90,10 +90,11 @@ Let's create assertion according to this rule:
 ```php
 public function assertEnoughProductsInStock(Stock stock, Product product, amount)
 {
-    $this->assertThat(
-        ['product' => $product], 
-        ['stock' => $stock], 
-        ['amount' => $amount], 
+    $this->assertThat([
+            'product' => $product,
+            'stock' => $stock, 
+            'amount' => $amount
+        ], 
         new DomainRule('stock and product.getStock() == stock and product.getAmount() > amount')
     );
 }
@@ -111,6 +112,7 @@ $this->assertEnoughProductsInStock($stock, $product, 2);
 
 ## Advanced Concepts
 
+* Instead of `$this->assertThat` you can call static version of this method: `PHPUnit\Framework\Assert::assertThat`
 * `Codeception\DomainRule` extends `PHPUnit\Framework\Constraint`.
 * `Codeception\DomainRule` uses `Symfony\Component\ExpressionLanguage\ExpressionLanguage`
 * [Expression Language can be extended](https://symfony.com/doc/current/components/expression_language/extending.html) by calling `$domainRule->getLanguage()` 
