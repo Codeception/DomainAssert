@@ -1,0 +1,24 @@
+{
+    "name": "codeception/domain-assert",
+    "description":"Custom assertions for PHPUnit and Codeception",
+    "keywords":["BDD", "unit testing", "tdd", "assertions"],
+    "homepage":"http://codeception.com/",
+    "type":"library",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Michael Bodnarchuk",
+            "email":"davert@codeception.com",
+            "homepage":"http://codeception.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Codeception\\": "src/"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^6.4",
+        "symfony/expression-language": "^3.3"
+    }
+}
