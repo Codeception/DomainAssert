@@ -15,8 +15,8 @@ class CustomAssertionTest extends \PHPUnit\Framework\TestCase
     public function testFailedAssertion()
     {
         $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
-        $this->expectExceptionMessageRegExp("~Failed asserting that `user and user.isValid()`~");
-        $this->expectExceptionMessageRegExp("~\[user\]: User Object~");
+        $this->expectExceptionMessageMatches("~Failed asserting that `user and user.isValid()`~");
+        $this->expectExceptionMessageMatches("~\[user\]: User Object~");
         $this->assertUserIsValid(new User('guest'));
     }
 
@@ -41,9 +41,9 @@ class CustomAssertionTest extends \PHPUnit\Framework\TestCase
     public function testErrorDescriptions()
     {
         $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
-        $this->expectExceptionMessageRegExp("~Failed asserting that `product.stockAmount > num`~");
-        $this->expectExceptionMessageRegExp("~\[product\]: Product Object~");
-        $this->expectExceptionMessageRegExp("~\[num\]: 5~");
+        $this->expectExceptionMessageMatches("~Failed asserting that `product.stockAmount > num`~");
+        $this->expectExceptionMessageMatches("~\[product\]: Product Object~");
+        $this->expectExceptionMessageMatches("~\[num\]: 5~");
 
         $product = new Product();
         $product->name = 'iphone';
